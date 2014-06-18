@@ -7,34 +7,34 @@ import (
 type Distance float64
 
 const (
-	Metre      Distance = 1
-	Centimetre          = Metre / 100
-	Millimetre          = Centimetre / 10
-	Kilometre           = 1000 * Metre
-	Mile                = 1.609344 * Kilometre
+	Meter      Distance = 1
+	Centimeter          = Meter / 100
+	Millimeter          = Centimeter / 10
+	Kilometer           = 1000 * Meter
+	Mile                = 1.609344 * Kilometer
 	Yard                = Mile / 1760
 	Foot                = Yard / 3
 	Inch                = Foot / 12
 )
 
 func (d Distance) String() string {
-	return fmt.Sprintf("%vm", float64(d))
+	return fmt.Sprintf("%v", float64(d)) + "m"
 }
 
-func (d Distance) Metres() float64 {
+func (d Distance) Meters() float64 {
 	return float64(d)
 }
 
-func (d Distance) Centimetres() float64 {
-	return float64(d / Centimetre)
+func (d Distance) Centimeters() float64 {
+	return float64(d / Centimeter)
 }
 
-func (d Distance) Millimetres() float64 {
-	return float64(d / Millimetre)
+func (d Distance) Millimeters() float64 {
+	return float64(d / Millimeter)
 }
 
-func (d Distance) Kilometres() float64 {
-	return float64(d / Kilometre)
+func (d Distance) Kilometers() float64 {
+	return float64(d / Kilometer)
 }
 
 func (d Distance) Miles() float64 {

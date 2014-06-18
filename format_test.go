@@ -9,13 +9,14 @@ func TestToString(t *testing.T) {
 		in       Distance
 		expected string
 	}{
-		{5 * Metre, "5m"},
+		{5 * Meter, "5m"},
 		{2 * Mile, "3218.688m"},
+		{2000 * Meter, "2000m"},
 	}
 
 	for _, tc := range testCases {
 		if out := tc.in.String(); out != tc.expected {
-			t.Errorf("Wrong string, got %v expected %v", out, tc.in)
+			t.Errorf("Wrong string, got %v expected %v", out, tc.expected)
 		}
 	}
 }
@@ -43,8 +44,8 @@ func TestParseDistanceToMetres(t *testing.T) {
 			t.Errorf("Unexpected error: %v", err)
 		}
 
-		if calculated.Metres() != tc.expected {
-			t.Errorf("Wrong distance, got %v expected %v", calculated.Metres(), tc.expected)
+		if calculated.Meters() != tc.expected {
+			t.Errorf("Wrong distance, got %v expected %v", calculated.Meters(), tc.expected)
 		}
 	}
 }

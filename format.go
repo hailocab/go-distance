@@ -24,14 +24,14 @@ func leadingInt(s string) (x int64, rem string, err error) {
 }
 
 var unitMap = map[string]float64{
-	"m":  float64(Metre),
-	"cm": float64(Centimetre),
+	"km": float64(Kilometer),
+	"m":  float64(Meter),
+	"cm": float64(Centimeter),
+	"mm": float64(Millimeter),
 	"mi": float64(Mile),
-	"mm": float64(Millimetre),
-	"km": float64(Kilometre),
-	"in": float64(Inch),
-	"ft": float64(Foot),
 	"yd": float64(Yard),
+	"ft": float64(Foot),
+	"in": float64(Inch),
 }
 
 func ParseDistance(s string) (Distance, error) {

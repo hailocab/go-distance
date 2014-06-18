@@ -17,8 +17,9 @@ const (
 	Inch                = Foot / 12
 )
 
+// String outputs a readable version of the distance in meters
 func (d Distance) String() string {
-	return fmt.Sprintf("%v", float64(d)) + "m"
+	return fmt.Sprintf("%v", d.Meters()) + "m"
 }
 
 func (d Distance) Meters() float64 {
